@@ -1,0 +1,17 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    container_name: asset-manager
+    ports:
+      - "8091:8091"
+    volumes:
+      - ./data:/app/data
+    environment:
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:-change-me}
+      PDA_HEARTBEAT_TOKEN: ${PDA_HEARTBEAT_TOKEN:-change-me-pda-token}
+      INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD:-admin123}
+      OLLAMA_BASE: ${OLLAMA_BASE:-}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5:7b}
+    restart: unless-stopped

@@ -1,0 +1,115 @@
+/* IT 资产管理系统 — 主题样式（当前激活：A 蓝白商务）
+   切换方案：改 html[data-theme] 或直接改 :root 变量 */
+
+/* ── 方案A：蓝白商务（默认）── */
+:root, html[data-theme="a"] {
+  --bg-page: #f5f7fa;
+  --bg-card: #ffffff;
+  --bg-panel: #eef1f6;
+  --border: #e3e8ef;
+  --text-main: #243044;
+  --text-dim: #7a869c;
+  --accent: #3477f6;
+  --green: #12a578;
+  --yellow: #d98f1f;
+  --red: #e5455e;
+}
+
+/* ── 方案B：青瓷冷灰 ── */
+html[data-theme="b"] {
+  --bg-page: #f2f6f6;
+  --bg-card: #ffffff;
+  --bg-panel: #e8f0ef;
+  --border: #d8e4e2;
+  --text-main: #1d3a36;
+  --text-dim: #6f8f89;
+  --accent: #0f9488;
+  --green: #12a578;
+  --yellow: #d98f1f;
+  --red: #e5455e;
+}
+
+/* ── 方案C：暖米雅致 ── */
+html[data-theme="c"] {
+  --bg-page: #faf7f2;
+  --bg-card: #ffffff;
+  --bg-panel: #f4efe6;
+  --border: #eae2d3;
+  --text-main: #3d3629;
+  --text-dim: #97897a;
+  --accent: #c47f17;
+  --green: #5c9e52;
+  --yellow: #d98f1f;
+  --red: #d4526a;
+}
+
+/* ── 方案D：紫灰现代 ── */
+html[data-theme="d"] {
+  --bg-page: #f6f5fa;
+  --bg-card: #ffffff;
+  --bg-panel: #f0edf7;
+  --border: #e5e1f0;
+  --text-main: #2d2842;
+  --text-dim: #837d99;
+  --accent: #6f5bd4;
+  --green: #12a578;
+  --yellow: #d98f1f;
+  --red: #e5455e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, sans-serif;
+  font-size: 14px;
+}
+
+#app { min-height: 100vh; }
+
+/* Element Plus 适配补强 */
+.el-card {
+  --el-card-bg-color: var(--bg-card);
+  border-color: var(--border);
+  box-shadow: 0 1px 4px rgba(31, 42, 68, .06);
+}
+.el-table {
+  --el-table-bg-color: var(--bg-card);
+  --el-table-tr-bg-color: var(--bg-card);
+  --el-table-header-bg-color: var(--bg-panel);
+  --el-table-header-text-color: var(--text-main);
+  --el-table-border-color: var(--border);
+  --el-table-row-hover-bg-color: var(--bg-panel);
+}
+.el-dialog {
+  --el-dialog-bg-color: var(--bg-card);
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #ffffff, var(--bg-panel));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 22px;
+  box-shadow: 0 1px 4px rgba(31, 42, 68, .05);
+}
+.stat-card .label { color: var(--text-dim); font-size: 13px; }
+.stat-card .value { font-size: 28px; font-weight: 700; margin-top: 6px; color: var(--text-main); }
+.stat-card .sub { color: var(--text-dim); font-size: 12px; margin-top: 4px; }
+
+.page-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: var(--text-main);
+  padding-left: 10px;
+  border-left: 4px solid var(--accent);
+}
+
+.tag-dot { display: inline-flex; align-items: center; gap: 6px; }
+.tag-dot::before {
+  content: '';
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--dot, var(--green));
+}
